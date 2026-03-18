@@ -16,3 +16,16 @@ odd_numbers = list(filter(lambda x: x % 2 == 1, numbers))
 
 print(tripled_numbers)  # Output: [3, 6, 9, 12, 15]
 print(odd_numbers)      # Output: [1, 3, 5] 
+
+names = ['Anthony', 'Benedict', 'Colin', 'Daphne', 'Eloise']
+
+filtered_names = list(filter(lambda name: name[0].upper() != 'A', names))
+
+print(filtered_names)   # Output: ['Benedict', 'Colin', 'Daphne', 'Eloise']
+
+
+compound_word = lambda str1, str2: str1 + str2
+
+word = compound_word('fire', 'fly')
+
+print(f'The compound word is: {word}')
