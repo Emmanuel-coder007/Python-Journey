@@ -15,4 +15,4 @@ tripled_numbers = list(map(lambda x: x * 3, numbers))
 odd_numbers = list(filter(lambda x: x % 2 == 1, numbers))
 
 print(tripled_numbers)  # Output: [3, 6, 9, 12, 15]
-print(odd_numbers)      # Output: [1, 3, 5]
+print(odd_numbers)      # Output: [1, 3, 5] 
