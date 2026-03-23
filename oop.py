@@ -10,16 +10,16 @@ class restaurants:
   #a class is a blueprint for creating objects
 
   #to create an object, we call the class as if it were a function
-  shop1 = restaurants() #this is an object of the restaurant class
-  shop1.name = 'Pizza Hut'
-  shop1.category = 'Fast Food'  
-  shop1.rating = 4.5
-  shop1.delivery = True
+shop1 = restaurants() #this is an object of the restaurant class
+shop1.name = 'Pizza Hut'
+shop1.category = 'Fast Food'  
+shop1.rating = 4.5
+shop1.delivery = True
 
-  print(vars(shop1)) #vars() is a built-in function that returns the __dict__ 
-  #attribute of an object, which is a dictionary containing all the attributes 
-  # #of the object and their values
-  # Output: {'name': 'Pizza Hut', 'category': 'Fast Food', 'rating': 4.5, 'delivery': True}
+print(vars(shop1)) #vars() is a built-in function that returns the __dict__ 
+#attribute of an object, which is a dictionary containing all the attributes 
+# #of the object and their values
+# Output: {'name': 'Pizza Hut', 'category': 'Fast Food', 'rating': 4.5, 'delivery': True}
 
 #------------------------------------------------------------------------------------------
 #exerecise example
