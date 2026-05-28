@@ -8,18 +8,25 @@ def convert_to_float(value):
     except ValueError:
         return 0.0
 
+# or use csv_file.readline() to skip the first row 
 sales = 0
 # Open the CSV file in 'read' mode with UTF-8 encoding
 with open('Bestseller.csv', 'r', encoding='utf8') as file:
     # Create a CSV reader object
+#    file.readline() # to skip the header row
     csv_reader = csv.reader(file)
+    # to also skip the header row
+    #next(csv_reader)
+    
 
     for row in csv_reader:
+#        print(row)
         if convert_to_float(row[-2]) > sales:
             sales = convert_to_float(row[-2])
         else:
             continue
 print(sales)
+
 
 
 
