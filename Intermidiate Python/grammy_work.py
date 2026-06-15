@@ -1,27 +1,37 @@
 from functools import reduce
-# List of songs with their durations (in minutes)
-playlist = [('What Was I Made For?', 3.42), ('Just Like That', 5.05), ('Song 3', 6.55), ('Leave The Door Open', 4.02), ('I Can\'t Breath', 4.47), ('Bad Guy', 3.14)]
 
-duration = playlist[0][1] # Get the duration of the first song in the playlist
-print (f" {duration}")
+playlist = [
+    ('What Was I Made For?', 3.42),
+    ('Just Like That', 5.05),
+    ('Song 3', 6.55),
+    ('Leave The Door Open', 4.02),
+    ("I Can't Breath", 4.47),
+    ('Bad Guy', 3.14)
+]
 
+# Helper functions
 def longer_than_five_minutes(song):
     return song[1] > 5.00
 
-final = filter(longer_than_five_minutes, playlist)
+def minutes_to_seconds(song):
+    duration = song[1]
+    minutes = int(duration)
+    seconds = (duration - minutes) * 100
+  
+    return minutes * 60 + round(seconds)
 
-durations = [song[1] for song in final] #durations is a list
-# for song in final:
-    #print(durations.append(song[1]))
-print(durations)
+def add_durations(total, song):
+    return total + song[1]
 
-def convert_to_seconds(x):
-    return playlist[x][1] * 60
- 
-def add_durations(x, y):
-    return x + y
+# Step 1: filter
+long_songs = list(filter(longer_than_five_minutes, playlist))
 
-minutes = int(duration)
-seconds = (duration - minutes) * 100
+# Step 2: map
+songs_in_seconds = list(map(minutes_to_seconds, playlist))
 
-total_seconds = minutes * 60 + round(seconds)
+# Step 3: reduce
+total_playtime = reduce(add_durations, playlist, 0)
+
+print("Songs longer than 5 mins:", long_songs)
+print("Durations in seconds:", songs_in_seconds)
+print("Total playtime (mins):", total_playtime)
