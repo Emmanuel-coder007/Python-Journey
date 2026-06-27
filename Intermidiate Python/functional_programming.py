@@ -14,10 +14,10 @@ new_suffixes = list(map(capitalize_suffix, suffixes))
 fire_in_name =lambda name: True if 'Fire' in name else False
 
 def concatenate_names(name1, name2):
-    return name1 + ' ' + name2
+    return name1 + ', ' + name2
 
 def create_fantasy_name(new_suffixes, prefixes):
-  return random.choice(new_suffixes) + ' ' + random.choice(prefixes)
+  return random.choice(prefixes) + ' ' + random.choice(new_suffixes)
 
 random_names = list(create_fantasy_name(new_suffixes, prefixes) for _ in range(10))
 
@@ -25,12 +25,18 @@ random_names = list(create_fantasy_name(new_suffixes, prefixes) for _ in range(1
 filtered_names = list(filter(fire_in_name, random_names))
 #Use reduce() and apply concatenate_names() to the filtered names.
 
-concatenated_fire_names = list(reduce(concatenate_names, filtered_names))
+concatenated_fire_names = reduce(concatenate_names, filtered_names)
 
-def display_name_info(list_name):
-   for name in list_name:
+def display_name_info():
+   for name in random_names:
       print(name)
     
-display_name_info(random_names)
-display_name_info(filtered_names)
-display_name_info(concatenated_fire_names)
+   print()
+   print('Filtered names: ', filtered_names)
+   print('Concatenated names:', concatenated_fire_names)
+   
+    
+display_name_info()
+
+
+#-------------------------------------------------------------------------------------------------------------------
