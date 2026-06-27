@@ -33,3 +33,7 @@ word = compound_word('fire', 'fly')
 
 print(f'The compound word is: {word}')
 #-----------------------------------------------------------------------------------
+#using if else in lambda function
+is_even = lambda x: True if x % 2 == 0 else False
+print(is_even(4))  # Output: True
+print(is_even(5))  # Output: False
