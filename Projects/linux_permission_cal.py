@@ -21,57 +21,15 @@ while True:
         print("Valid input.")
         break
 
+un_codes = {"rwx": "7", "rw-": "6", "r-x": "5", "r--": "4", "-wx": "3", "-w-": "2", "--x": "1", "---": "0"}
 user_permission = ""
 
-if answer[0:3] == 'rwx':
-    user_permission = "7"
-elif answer[0:3] == 'rw-':
-    user_permission = "6"   
-elif answer[0:3] == 'r-x':
-    user_permission = "5"
-elif answer[0:3] == 'r--':
-    user_permission = "4"
-elif answer[0:3] == '-wx':
-    user_permission = "3"   
-elif answer[0:3] == '-w-':
-    user_permission = "2"
-elif answer[0:3] == '--x':
-    user_permission = "1"
-else:
-    user_permission = "0"
+for i in range(len(answer)):
+    for key, value in un_codes.items():
+        if answer[i:i+3] == key:
+            user_permission += value
+            i += 2
+            break
 
-if answer[3:6] == 'rwx':
-    user_permission = user_permission + "7"
-elif answer[3:6] == 'rw-':
-    user_permission = user_permission + "6"
-elif answer[3:6] == 'r-x':
-    user_permission = user_permission + "5"
-elif answer[3:6] == 'r--':
-    user_permission = user_permission + "4"
-elif answer[3:6] == '-wx':
-    user_permission = user_permission + "3"
-elif answer[3:6] == '-w-':
-    user_permission = user_permission + "2"
-elif answer[3:6] == '--x':
-    user_permission = user_permission + "1"
-else:
-    user_permission = user_permission + "0"
-
-if answer[6:9] == 'rwx':
-    user_permission = user_permission + "7"
-elif answer[6:9] == 'rw-':
-    user_permission = user_permission + "6"
-elif answer[6:9] == 'r-x':
-    user_permission = user_permission + "5"
-elif answer[6:9] == 'r--':
-    user_permission = user_permission + "4"
-elif answer[6:9] == '-wx':
-    user_permission = user_permission + "3"
-elif answer[6:9] == '-w-':
-    user_permission = user_permission + "2"
-elif answer[6:9] == '--x':
-    user_permission = user_permission + "1"
-else:
-    user_permission = user_permission + "0"
-
+print(answer)
 print("The permission in octal format is: " + user_permission)
