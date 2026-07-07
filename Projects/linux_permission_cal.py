@@ -23,53 +23,53 @@ while True:
 
 user_permission = ""
 
-if answer[0:2] == 'rwx':
+if answer[0:3] == 'rwx':
     user_permission = "7"
-elif answer[0:2] == 'rw-':
+elif answer[0:3] == 'rw-':
     user_permission = "6"   
-elif answer[0:2] == 'r-x':
+elif answer[0:3] == 'r-x':
     user_permission = "5"
-elif answer[0:2] == 'r--':
+elif answer[0:3] == 'r--':
     user_permission = "4"
-elif answer[0:2] == '-wx':
+elif answer[0:3] == '-wx':
     user_permission = "3"   
-elif answer[0:2] == '-w-':
+elif answer[0:3] == '-w-':
     user_permission = "2"
-elif answer[0:2] == '--x':
+elif answer[0:3] == '--x':
     user_permission = "1"
 else:
     user_permission = "0"
 
-if answer[2:4] == 'rwx':
+if answer[3:6] == 'rwx':
     user_permission = user_permission + "7"
-elif answer[2:4] == 'rw-':
+elif answer[3:6] == 'rw-':
     user_permission = user_permission + "6"
-elif answer[2:4] == 'r-x':
+elif answer[3:6] == 'r-x':
     user_permission = user_permission + "5"
-elif answer[2:4] == 'r--':
+elif answer[3:6] == 'r--':
     user_permission = user_permission + "4"
-elif answer[2:4] == '-wx':
+elif answer[3:6] == '-wx':
     user_permission = user_permission + "3"
-elif answer[2:4] == '-w-':
+elif answer[3:6] == '-w-':
     user_permission = user_permission + "2"
-elif answer[2:4] == '--x':
+elif answer[3:6] == '--x':
     user_permission = user_permission + "1"
 else:
     user_permission = user_permission + "0"
 
-if answer[4:6] == 'rwx':
+if answer[6:9] == 'rwx':
     user_permission = user_permission + "7"
-elif answer[4:6] == 'rw-':
+elif answer[6:9] == 'rw-':
     user_permission = user_permission + "6"
-elif answer[4:6] == 'r-x':
+elif answer[6:9] == 'r-x':
     user_permission = user_permission + "5"
-elif answer[4:6] == 'r--':
+elif answer[6:9] == 'r--':
     user_permission = user_permission + "4"
-elif answer[4:6] == '-wx':
+elif answer[6:9] == '-wx':
     user_permission = user_permission + "3"
-elif answer[4:6] == '-w-':
+elif answer[6:9] == '-w-':
     user_permission = user_permission + "2"
-elif answer[4:6] == '--x':
+elif answer[6:9] == '--x':
     user_permission = user_permission + "1"
 else:
     user_permission = user_permission + "0"
