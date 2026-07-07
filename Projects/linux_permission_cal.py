@@ -24,7 +24,7 @@ while True:
 un_codes = {"rwx": "7", "rw-": "6", "r-x": "5", "r--": "4", "-wx": "3", "-w-": "2", "--x": "1", "---": "0"}
 user_permission = ""
 
-for i in range(len(answer)):
+for i in range(0, len(answer), 3):
     for key, value in un_codes.items():
         if answer[i:i+3] == key:
             user_permission += value
