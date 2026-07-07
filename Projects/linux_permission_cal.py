@@ -28,7 +28,6 @@ for i in range(len(answer)):
     for key, value in un_codes.items():
         if answer[i:i+3] == key:
             user_permission += value
-            i += 2
             break
 
 print(answer)
