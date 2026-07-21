@@ -1,0 +1,3 @@
+import pandas as pd
+
+df = pd.read_csv('my_filename.csv')
